@@ -395,3 +395,11 @@ footer {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
 }
+@media (max-width: 1350px) {
+  .logo {
+    flex: 0;
+  }
+  .right-side-header {
+    flex: 0;
+  }
+}
