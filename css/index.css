@@ -213,6 +213,7 @@ nav ul li a:hover {
 }
 #shoe-grid {
   display: flex;
+flex-direction:column;
   justify-content: flex-start;
 }
 .shoe-header {
