@@ -1,0 +1,30 @@
+nav ul li a:hover::after {
+  width: 100%;
+}
+.shoe:hover {
+  cursor: pointer;
+  transform: translateY(-4px);
+}
+.f-second-r ul li a:hover {
+  color: var(--dark);
+}
+.close-nav img:hover {
+  cursor: pointer;
+}
+.shop-it-btn:hover,
+#discover-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--dark);
+  color: var(--white);
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.shop-it-img:hover {
+  transform: scale(1.005);
+}
