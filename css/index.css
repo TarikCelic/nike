@@ -208,7 +208,7 @@ nav ul li a:hover {
   position: relative;
   transition: all 0.2s ease-in;
 }
-#shoe-gird {
+#shoe-grid {
   display: flex;
   justify-content: flex-start;
 }
