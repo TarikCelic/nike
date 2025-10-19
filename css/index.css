@@ -1,20 +1,6 @@
-:root {
-  --white: #f2f3f4;
-  --dark: #181818;
-  --main-font: "Josefin Sans";
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--main-font);
-}
 body {
   background-color: var(--white);
   position: relative;
-}
-html {
-  scroll-behavior: smooth;
 }
 header {
   width: 100%;
@@ -67,7 +53,7 @@ nav ul li a::after {
   position: absolute;
   transform: translateX(-50%);
   background: var(--dark);
-  height: 1px;
+  height: 2px;
   transition: width 0.2s ease-in;
 }
 nav ul li a:hover {
@@ -132,14 +118,6 @@ nav ul li a:hover {
 #discover-left,
 #discover-right {
   position: relative;
-}
-.gradient-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
 }
 
 .discover-info {

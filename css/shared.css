@@ -1,0 +1,92 @@
+:root {
+  --white: #f2f3f4;
+  --dark: #181818;
+  --main-font: "Josefin Sans", sans-serif;
+  --nike-font: "Nike", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--main-font);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+.shoe:hover {
+  cursor: pointer;
+  transform: translateY(-4px);
+}
+.f-second-r ul li a:hover {
+  color: var(--dark);
+}
+.close-nav img:hover {
+  cursor: pointer;
+}
+.shop-it-btn:hover,
+#discover-btn:hover {
+  transform: translateY(-2px);
+  background-color: var(--dark);
+  color: var(--white);
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.shop-it-img:hover {
+  transform: scale(1.005);
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+@keyframes fadeOpacity {
+  0% {
+    opacity: 1;
+    display: flex;
+    position: absolute;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: 0;
+    background-color: transparent;
+    pointer-events: none;
+  }
+}
+@keyframes fromBottom {
+  0% {
+    transform: translateY(300%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(300%);
+  }
+}
+
+@keyframes fromTop {
+  0% {
+    transform: translateY(-300%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-300%);
+  }
+}
