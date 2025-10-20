@@ -185,12 +185,12 @@ body {
 }
 .first-screen h1 {
   transform: translateY(300%);
-  animation: fromTop 4s ease-in forwards;
+  animation: fromTop 2.1s ease-in forwards;
 }
 
 .first-screen img {
   transform: translateY(-300%);
-  animation: fromBottom 4s ease-in forwards;
+  animation: fromBottom 2.1s ease-in forwards;
 }
 @media (max-width: 1310px) {
   .product-p {

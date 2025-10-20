@@ -2,110 +2,7 @@ body {
   background-color: var(--white);
   position: relative;
 }
-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 2rem;
-  top: 0;
-  position: sticky;
-  z-index: 10;
-  background-color: var(--white);
-  opacity: 0;
-  animation: fadeIn 0.75s ease-in forwards;
-}
-#logo-img {
-  width: 3.5rem;
-  cursor: pointer;
-}
-nav ul {
-  display: flex;
-  gap: 0.4rem;
-  list-style: none;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0;
-}
-.right-side-header,
-nav,
-.logo {
-  flex: 1;
-}
-nav ul li a {
-  text-decoration: none;
-  display: inline-block;
-  color: var(--dark);
-  font-size: 1.05rem;
-  width: 6rem;
-  text-align: center;
-  padding: 0.5rem 0;
-  transition: all 0.2s ease-in;
-}
-li {
-  position: relative;
-}
-nav ul li a::after {
-  content: "";
-  width: 0;
-  bottom: 0;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  background: var(--dark);
-  height: 2px;
-  transition: width 0.2s ease-in;
-}
-nav ul li a:hover {
-  letter-spacing: 1px;
-}
-#social,
-.f-second-r,
-#favourites,
-.search,
-.right-side-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.right-side-header {
-  gap: 2rem;
-  justify-content: flex-end;
-}
-.search {
-  transition: all 0.2s ease-in;
-}
-.search:hover {
-  backdrop-filter: brightness(95%);
-}
-.search {
-  gap: 0.3rem;
-  padding-left: 0.5rem;
-  box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
-  border-radius: 100px;
-  height: 2rem;
-}
-#search-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-#search-button img {
-  width: 1.6rem;
-}
-#search-input {
-  height: 100%;
-  width: 13rem;
-  background-color: transparent;
-  border: none;
-}
-#search-input:active,
-#search-input:focus {
-  outline: none;
-}
-#favourites-icon {
-  width: 1.5rem;
-}
+
 #discover {
   display: flex;
   justify-content: center;
@@ -286,92 +183,7 @@ footer {
 .f-third-r {
   margin-top: 2rem;
 }
-.hambi {
-  display: none;
-}
-.resp-navigation {
-  position: fixed;
-  background-color: #fffffff5;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1000;
-  overflow-y: hidden;
-  padding: 3rem 3rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 5rem;
-  display: none;
-}
-.first-row-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  opacity: 0;
-  animation: fadeIn 0.9s ease-in forwards;
-}
-.second-row-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  opacity: 0;
-  animation: fadeIn 0.9s ease-in forwards;
-}
-.second-row-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.4rem;
-}
-.second-row-nav ul li a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 15rem;
-  background-color: #f2f3f467;
-  border-bottom: 1px solid #1818182c;
-  text-decoration: none;
-  color: var(--dark);
-  font-size: 1.4rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  cursor: pointer;
-}
-.no-scroll {
-  overflow: hidden;
-  height: 100vh; /* osigurava da ne možeš skrolati */
-}
-.third-row-nav {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  gap: 2rem;
-  align-items: center;
-  opacity: 0;
-  animation: fadeIn 0.9s ease-in forwards;
-}
-.nav-btn {
-  padding: 0.5rem;
-  border-bottom: 1px solid #181818;
-}
 @media (max-width: 1070px) {
-  .right-side-header,
-  nav {
-    display: none;
-  }
-  .hambi {
-    display: block;
-  }
   #shop-it {
     padding: 1rem 1rem;
   }
@@ -445,13 +257,5 @@ footer {
 @media (max-width: 310px) {
   .f-second-r {
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  }
-}
-@media (max-width: 1350px) {
-  .logo {
-    flex: 0;
-  }
-  .right-side-header {
-    flex: 0;
   }
 }
