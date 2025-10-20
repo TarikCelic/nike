@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/article.css" />
+  </head>
+  <body>
+    <div class="resp-navigation">
+      <div class="first-row-nav">
+        <img src="imgs/icons/nike_black_logo.svg" alt="logo" id="logo-img" />
+        <div class="close-nav">
+          <img src="imgs/icons/close_btn.svg" width="35rem" />
+        </div>
+      </div>
+      <div class="second-row-nav">
+        <ul>
+          <li>
+            <a href="new.html">
+              <img src="imgs/icons/top-left-arrow.svg" width="20px" alt="" />
+              New</a
+            >
+          </li>
+          <li>
+            <a href="article.html">
+              <img
+                src="imgs/icons/top-left-arrow.svg"
+                width="20rem"
+                alt=""
+              />Shoes</a
+            >
+          </li>
+          <li>
+            <a href="">
+              <img
+                src="imgs/icons/top-left-arrow.svg"
+                width="20rem"
+                alt=""
+              />Clothes</a
+            >
+          </li>
+          <li>
+            <a href="">
+              <img
+                src="imgs/icons/top-left-arrow.svg"
+                width="20rem"
+                alt=""
+              />Kids</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="third-row-nav">
+        <div class="nav-btn">
+          <button type="button" id="search-button">
+            <img src="imgs/icons/search.svg" alt="search" />
+          </button>
+        </div>
+        <div class="nav-btn">
+          <a href="" id="favourites">
+            <img
+              src="imgs/icons/favourite.svg"
+              alt="favourites"
+              id="favourites-icon"
+            /><!--25px-->
+          </a>
+        </div>
+        <div class="nav-btn">
+          <a href="" id="cart">
+            <img
+              src="imgs/icons/cart.svg"
+              alt="favourites"
+              id="favourites-icon"
+            /><!--25px-->
+          </a>
+        </div>
+      </div>
+    </div>
+    <header>
+      <a class="logo" href="index.html">
+        <img
+          src="imgs/icons/nike_black_logo.svg"
+          alt="logo"
+          id="logo-img"
+        /><!--60px-->
+      </a>
+      <nav>
+        <ul>
+          <li><a href="new.html">New</a></li>
+          <li><a href="article.html">Shoes</a></li>
+          <li><a href="">Clothes</a></li>
+          <li><a href="">Kids</a></li>
+        </ul>
+      </nav>
+      <div class="right-side-header">
+        <div class="search">
+          <button type="button" id="search-button">
+            <img src="imgs/icons/search.svg" alt="search" />
+          </button>
+          <input id="search-input" type="text" placeholder="Search" />
+        </div>
+        <a href="" id="favourites">
+          <img
+            src="imgs/icons/favourite.svg"
+            alt="favourites"
+            id="favourites-icon"
+          /><!--25px-->
+        </a>
+        <a href="" id="cart">
+          <img
+            src="imgs/icons/cart.svg"
+            alt="favourites"
+            id="favourites-icon"
+          /><!--25px-->
+        </a>
+      </div>
+      <div class="hambi">
+        <img src="imgs/icons/hambi.svg" width="30rem" alt="" />
+      </div>
+    </header>
+    <main>
+      <aside>
+        <div class="filteri">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Gender
+            </button>
+            <ul class="dropdown-menu">
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-gender"
+                  type="checkbox"
+                  value="Man"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault"> Man </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-gender"
+                  type="checkbox"
+                  value="Woman"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Woman
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-gender"
+                  type="checkbox"
+                  value="Unisex"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Unisex
+                </label>
+              </div>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Shop By Price
+            </button>
+            <ul class="dropdown-menu">
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-price"
+                  type="checkbox"
+                  value="0-50"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Under 50€
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-price"
+                  type="checkbox"
+                  value="50-100"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Between 50€ and 100€
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-price"
+                  type="checkbox"
+                  value="100-150"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Between 100€ and 150€
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-price"
+                  type="checkbox"
+                  value="150+"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  More than 150€
+                </label>
+              </div>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle filter-price"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Sale and Offers
+            </button>
+            <ul class="dropdown-menu">
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sale"
+                  type="checkbox"
+                  value=""
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Sale
+                </label>
+              </div>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Sizes
+            </button>
+            <div class="dropdown-menu btns">
+              <button class="size-btn">35.5</button>
+              <button class="size-btn">36</button>
+              <button class="size-btn">36.5</button>
+              <button class="size-btn">37</button>
+              <button class="size-btn">37.5</button>
+              <button class="size-btn">38</button>
+              <button class="size-btn">38.5</button>
+              <button class="size-btn">39</button>
+              <button class="size-btn">39.5</button>
+              <button class="size-btn">40</button>
+              <button class="size-btn">40.5</button>
+              <button class="size-btn">41</button>
+              <button class="size-btn">41.5</button>
+              <button class="size-btn">42</button>
+              <button class="size-btn">42.5</button>
+              <button class="size-btn">43</button>
+              <button class="size-btn">43.5</button>
+              <button class="size-btn">44</button>
+              <button class="size-btn">44.5</button>
+              <button class="size-btn">45</button>
+              <button class="size-btn">45.5</button>
+              <button class="size-btn">46</button>
+              <button class="size-btn">46.5</button>
+              <button class="size-btn">47</button>
+              <button class="size-btn">47.5</button>
+              <button class="size-btn">48</button>
+              <button class="size-btn">48.5</button>
+              <button class="size-btn">49</button>
+              <button class="size-btn">49.5</button>
+              <button class="size-btn">50</button>
+              <button class="size-btn">50.5</button>
+              <button class="size-btn">51</button>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Colour
+            </button>
+            <div class="dropdown-menu colours-grid">
+              <div class="colour">
+                <div class="color-circle" style="background-color: black"></div>
+                Black
+              </div>
+              <div class="colour">
+                <div
+                  class="color-circle"
+                  style="background-color: rgb(9, 144, 255)"
+                ></div>
+                Blue
+              </div>
+              <div class="colour">
+                <div
+                  class="color-circle"
+                  style="background-color: rgb(146, 79, 79)"
+                ></div>
+                Brown
+              </div>
+              <div class="colour">
+                <div
+                  class="color-circle"
+                  style="background-color: rgb(104, 184, 104)"
+                ></div>
+                Green
+              </div>
+              <div class="colour">
+                <div
+                  class="color-circle"
+                  style="background-color: rgb(138, 138, 138)"
+                ></div>
+                Gray
+              </div>
+              <div class="colour">
+                <div
+                  class="color-circle"
+                  style="background-color: rgb(255, 123, 0)"
+                ></div>
+                Orange
+              </div>
+
+              <div class="colour">
+                <div
+                  class="color-circle"
+                  style="background-color: rgb(214, 146, 228)"
+                ></div>
+                Pink
+              </div>
+              <div class="colour">
+                <div
+                  class="color-circle"
+                  style="background-color: rgb(122, 5, 218)"
+                ></div>
+                Purple
+              </div>
+              <div class="colour">
+                <div
+                  class="color-circle"
+                  style="background-color: rgb(228, 55, 55)"
+                ></div>
+                Red
+              </div>
+
+              <div class="colour">
+                <div
+                  class="color-circle"
+                  style="background-color: rgb(255, 255, 255)"
+                ></div>
+                White
+              </div>
+              <div class="colour">
+                <div
+                  class="color-circle"
+                  style="background-color: rgb(255, 252, 55)"
+                ></div>
+                Yellow
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Shoe Height
+            </button>
+            <ul class="dropdown-menu">
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-shoeHeight"
+                  type="checkbox"
+                  value="Low Top"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Low Top
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-shoeHeight"
+                  type="checkbox"
+                  value="Mid Top"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Mid Top
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-shoeHeight"
+                  type="checkbox"
+                  value="High Top"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  High Top
+                </label>
+              </div>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Collection
+            </button>
+            <ul class="dropdown-menu">
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Nike Motiva"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Nike Motiva
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Nike GT Series"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Nike GT Series
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Air Max"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Air Max
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Nike Total 90"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Nike Total 90
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Elite"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Elite
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Mercurial"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Mercurial
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Monarch"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Monarch
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Nike Dunk"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Nike Dunk
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Tiempo"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Tiempo
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Nike Zoom Rival"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Nike Zoom Rival
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Phantom"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Phantom
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Nike Rejuven8"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Nike Rejuven8
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-collection"
+                  type="checkbox"
+                  value="Nike Court Vision"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Nike Court Vision
+                </label>
+              </div>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Sports
+            </button>
+            <ul class="dropdown-menu">
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sports"
+                  type="checkbox"
+                  value="Lifestyle"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Lifestyle
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sports"
+                  type="checkbox"
+                  value="Performance"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Performance
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sports"
+                  type="checkbox"
+                  value="Running"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Running
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sports"
+                  type="checkbox"
+                  value="Training & Gym"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Training & Gym
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sports"
+                  type="checkbox"
+                  value="Basketball"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Basketball
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sports"
+                  type="checkbox"
+                  value="Football"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Football
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sports"
+                  type="checkbox"
+                  value="Golf"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Golf
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sports"
+                  type="checkbox"
+                  value="Skateboarding"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Skateboarding
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sports"
+                  type="checkbox"
+                  value="Tennis"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Tennis
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sports"
+                  type="checkbox"
+                  value="Athletics"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Athletics
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sports"
+                  type="checkbox"
+                  value="Walking"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Walking
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-sports"
+                  type="checkbox"
+                  value="Outdoor"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Outdoor
+                </label>
+              </div>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Brand
+            </button>
+            <ul class="dropdown-menu">
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-brand"
+                  type="checkbox"
+                  value="Nike Sportswear"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Nike Sportswear
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-brand"
+                  type="checkbox"
+                  value="Jordan"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  Jordan
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-brand"
+                  type="checkbox"
+                  value="NikeLab"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault">
+                  NikeLab
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input filter-brand"
+                  type="checkbox"
+                  value="ACG"
+                  id="checkDefault"
+                />
+                <label class="form-check-label" for="checkDefault"> ACG </label>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </aside>
+      <article></article>
+    </main>
+    <script src="js/shoes.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
