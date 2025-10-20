@@ -1,18 +1,16 @@
 const shoeGrid = document.querySelector("article");
-let products = []; // svi proizvodi
+let products = [];
 
-// 1️⃣ Učitavanje JSON-a
 fetch("shoes.json")
   .then((response) => response.json())
   .then((data) => {
     products = data.patike;
-    displayProducts(products); // inicijalno sve proizvode
+    displayProducts(products);
   })
-  .catch((err) => console.error("Greška pri učitavanju JSON-a:", err));
+  .catch((err) => console.error("Greska pri ucitavanju JSON-a:", err));
 
-// 2️⃣ Funkcija za prikaz proizvoda
 function displayProducts(items) {
-  shoeGrid.innerHTML = ""; // očisti prethodne
+  shoeGrid.innerHTML = "";
   items.forEach((p) => {
     shoeGrid.insertAdjacentHTML(
       "beforeend",
@@ -22,10 +20,12 @@ function displayProducts(items) {
           <h3 class="shoe-name">${p.name}</h3>
           <p class="shoe-gender">${p.gender}'s shoe</p>
           <div class="shoe-price">
-            <p class="price-now">${p.price}€</p>
-            <p class="price-original">${p.sale ? p.originalPrice + "€" : ""}</p>
+            <p class="price-now">${p.price} EUR</p>
+            <p class="price-original">${
+              p.sale && p.originalPrice ? p.originalPrice + " EUR" : ""
+            }</p>
             <p class="sale">${
-              p.sale
+              p.sale && p.originalPrice
                 ? Math.round(
                     ((p.originalPrice - p.price) / p.originalPrice) * 100
                   ) + "% off"
@@ -38,59 +38,76 @@ function displayProducts(items) {
   });
 }
 
-// 3️⃣ Prati sve checkboxove
 const filters = document.querySelectorAll("input[type=checkbox]");
 filters.forEach((cb) => cb.addEventListener("change", applyFilters));
 
-// 4️⃣ Funkcija za filtriranje
+const sizeButtons = document.querySelectorAll(".size-btn");
+sizeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("active");
+    applyFilters();
+  });
+});
+
+const colorButtons = document.querySelectorAll(".colour");
+colorButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("active");
+
+    // Fix: Deaktiviraj sale filter ako je automatski aktivan
+    const saleCheckbox = document.querySelector(".filter-sale");
+    if (saleCheckbox && saleCheckbox.checked) {
+      saleCheckbox.checked = false;
+    }
+
+    applyFilters();
+  });
+});
+
 function applyFilters() {
-  // Gender
   const genderChecked = Array.from(
     document.querySelectorAll(".filter-gender:checked")
   ).map((i) => i.value);
 
-  // Price
   const priceChecked = Array.from(
     document.querySelectorAll(".filter-price:checked")
   ).map((i) => i.value);
 
-  // Sale
   const saleChecked = document.querySelector(".filter-sale:checked")
     ? true
     : false;
 
-  // Color
   const colorChecked = Array.from(
-    document.querySelectorAll(".filter-color:checked")
-  ).map((i) => i.value);
+    document.querySelectorAll(".colour.active")
+  ).map((c) => c.dataset.color);
 
-  // Shoe Height
   const heightChecked = Array.from(
     document.querySelectorAll(".filter-shoeHeight:checked")
   ).map((i) => i.value);
 
-  // Collection
   const collectionChecked = Array.from(
     document.querySelectorAll(".filter-collection:checked")
   ).map((i) => i.value);
 
-  // Sports
   const sportsChecked = Array.from(
     document.querySelectorAll(".filter-sports:checked")
   ).map((i) => i.value);
 
-  // Brand
   const brandChecked = Array.from(
     document.querySelectorAll(".filter-brand:checked")
   ).map((i) => i.value);
 
-  // Filtriranje
+  const activeSizes = Array.from(
+    document.querySelectorAll(".size-btn.active")
+  ).map((b) => parseFloat(b.textContent));
+
   const filtered = products.filter((p) => {
-    // Gender filter
     if (genderChecked.length > 0 && !genderChecked.includes(p.gender))
       return false;
 
-    // Price filter
+    if (activeSizes.length > 0 && !p.size.some((s) => activeSizes.includes(s)))
+      return false;
+
     if (priceChecked.length > 0) {
       let pass = false;
       for (let range of priceChecked) {
@@ -102,35 +119,32 @@ function applyFilters() {
       if (!pass) return false;
     }
 
-    // Sale filter
     if (saleChecked && !p.sale) return false;
 
-    // Color
-    if (colorChecked.length > 0 && !colorChecked.includes(p.color))
-      return false;
+    if (colorChecked.length > 0) {
+      const productColors = p.colour.map((c) => c.toLowerCase());
+      const selectedColors = colorChecked.map((c) => c.toLowerCase());
+      const match = productColors.some((c) => selectedColors.includes(c));
+      if (!match) return false;
+    }
 
-    // Shoe Height
     if (heightChecked.length > 0 && !heightChecked.includes(p.shoeHeight))
       return false;
 
-    // Collection
     if (
       collectionChecked.length > 0 &&
       !collectionChecked.includes(p.collection)
     )
       return false;
 
-    // Sports
     if (sportsChecked.length > 0 && !sportsChecked.includes(p.sports))
       return false;
 
-    // Brand
     if (brandChecked.length > 0 && !brandChecked.includes(p.brand))
       return false;
 
-    return true; // prođe sve filtere
+    return true;
   });
 
-  // Prikaz filtriranih proizvoda
   displayProducts(filtered);
 }

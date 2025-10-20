@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -76,7 +76,7 @@
               src="imgs/icons/favourite.svg"
               alt="favourites"
               id="favourites-icon"
-            /><!--25px-->
+            />
           </a>
         </div>
         <div class="nav-btn">
@@ -85,18 +85,14 @@
               src="imgs/icons/cart.svg"
               alt="favourites"
               id="favourites-icon"
-            /><!--25px-->
+            />
           </a>
         </div>
       </div>
     </div>
     <header>
       <a class="logo" href="index.html">
-        <img
-          src="imgs/icons/nike_black_logo.svg"
-          alt="logo"
-          id="logo-img"
-        /><!--60px-->
+        <img src="imgs/icons/nike_black_logo.svg" alt="logo" id="logo-img" />
       </a>
       <nav>
         <ul>
@@ -118,14 +114,14 @@
             src="imgs/icons/favourite.svg"
             alt="favourites"
             id="favourites-icon"
-          /><!--25px-->
+          />
         </a>
         <a href="" id="cart">
           <img
             src="imgs/icons/cart.svg"
             alt="favourites"
             id="favourites-icon"
-          /><!--25px-->
+          />
         </a>
       </div>
       <div class="hambi">
@@ -150,18 +146,18 @@
                   class="form-check-input filter-gender"
                   type="checkbox"
                   value="Man"
-                  id="checkDefault"
+                  id="genderMan"
                 />
-                <label class="form-check-label" for="checkDefault"> Man </label>
+                <label class="form-check-label" for="genderMan"> Man </label>
               </div>
               <div class="form-check">
                 <input
                   class="form-check-input filter-gender"
                   type="checkbox"
                   value="Woman"
-                  id="checkDefault"
+                  id="genderWoman"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="genderWoman">
                   Woman
                 </label>
               </div>
@@ -170,9 +166,9 @@
                   class="form-check-input filter-gender"
                   type="checkbox"
                   value="Unisex"
-                  id="checkDefault"
+                  id="genderUnisex"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="genderUnisex">
                   Unisex
                 </label>
               </div>
@@ -194,20 +190,18 @@
                   class="form-check-input filter-price"
                   type="checkbox"
                   value="0-50"
-                  id="checkDefault"
+                  id="price1"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Under 50€
-                </label>
+                <label class="form-check-label" for="price1"> Under 50€ </label>
               </div>
               <div class="form-check">
                 <input
                   class="form-check-input filter-price"
                   type="checkbox"
                   value="50-100"
-                  id="checkDefault"
+                  id="price2"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="price2">
                   Between 50€ and 100€
                 </label>
               </div>
@@ -216,9 +210,9 @@
                   class="form-check-input filter-price"
                   type="checkbox"
                   value="100-150"
-                  id="checkDefault"
+                  id="price3"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="price3">
                   Between 100€ and 150€
                 </label>
               </div>
@@ -227,9 +221,9 @@
                   class="form-check-input filter-price"
                   type="checkbox"
                   value="150+"
-                  id="checkDefault"
+                  id="price4"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="price4">
                   More than 150€
                 </label>
               </div>
@@ -238,7 +232,7 @@
 
           <div class="dropdown">
             <button
-              class="btn btn-secondary dropdown-toggle filter-price"
+              class="btn btn-secondary dropdown-toggle"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -250,12 +244,10 @@
                 <input
                   class="form-check-input filter-sale"
                   type="checkbox"
-                  value=""
-                  id="checkDefault"
+                  value="sale"
+                  id="saleCheck"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Sale
-                </label>
+                <label class="form-check-label" for="saleCheck"> Sale </label>
               </div>
             </ul>
           </div>
@@ -313,40 +305,41 @@
             >
               Colour
             </button>
+
             <div class="dropdown-menu colours-grid">
-              <div class="colour">
+              <div class="colour" data-color="black">
                 <div class="color-circle" style="background-color: black"></div>
                 Black
               </div>
-              <div class="colour">
+              <div class="colour" data-color="blue">
                 <div
                   class="color-circle"
                   style="background-color: rgb(9, 144, 255)"
                 ></div>
                 Blue
               </div>
-              <div class="colour">
+              <div class="colour" data-color="brown">
                 <div
                   class="color-circle"
                   style="background-color: rgb(146, 79, 79)"
                 ></div>
                 Brown
               </div>
-              <div class="colour">
+              <div class="colour" data-color="green">
                 <div
                   class="color-circle"
                   style="background-color: rgb(104, 184, 104)"
                 ></div>
                 Green
               </div>
-              <div class="colour">
+              <div class="colour" data-color="gray">
                 <div
                   class="color-circle"
                   style="background-color: rgb(138, 138, 138)"
                 ></div>
                 Gray
               </div>
-              <div class="colour">
+              <div class="colour" data-color="orange">
                 <div
                   class="color-circle"
                   style="background-color: rgb(255, 123, 0)"
@@ -354,21 +347,21 @@
                 Orange
               </div>
 
-              <div class="colour">
+              <div class="colour" data-color="pink">
                 <div
                   class="color-circle"
                   style="background-color: rgb(214, 146, 228)"
                 ></div>
                 Pink
               </div>
-              <div class="colour">
+              <div class="colour" data-color="purple">
                 <div
                   class="color-circle"
                   style="background-color: rgb(122, 5, 218)"
                 ></div>
                 Purple
               </div>
-              <div class="colour">
+              <div class="colour" data-color="red">
                 <div
                   class="color-circle"
                   style="background-color: rgb(228, 55, 55)"
@@ -376,14 +369,14 @@
                 Red
               </div>
 
-              <div class="colour">
+              <div class="colour" data-color="white">
                 <div
                   class="color-circle"
                   style="background-color: rgb(255, 255, 255)"
                 ></div>
                 White
               </div>
-              <div class="colour">
+              <div class="colour" data-color="yellow">
                 <div
                   class="color-circle"
                   style="background-color: rgb(255, 252, 55)"
@@ -408,9 +401,9 @@
                   class="form-check-input filter-shoeHeight"
                   type="checkbox"
                   value="Low Top"
-                  id="checkDefault"
+                  id="heightLow"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="heightLow">
                   Low Top
                 </label>
               </div>
@@ -420,9 +413,9 @@
                   class="form-check-input filter-shoeHeight"
                   type="checkbox"
                   value="Mid Top"
-                  id="checkDefault"
+                  id="heightMid"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="heightMid">
                   Mid Top
                 </label>
               </div>
@@ -432,9 +425,9 @@
                   class="form-check-input filter-shoeHeight"
                   type="checkbox"
                   value="High Top"
-                  id="checkDefault"
+                  id="heightHigh"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="heightHigh">
                   High Top
                 </label>
               </div>
@@ -456,11 +449,9 @@
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Nike Motiva"
-                  id="checkDefault"
+                  id="col1"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Nike Motiva
-                </label>
+                <label class="form-check-label" for="col1"> Nike Motiva </label>
               </div>
 
               <div class="form-check">
@@ -468,9 +459,9 @@
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Nike GT Series"
-                  id="checkDefault"
+                  id="col2"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="col2">
                   Nike GT Series
                 </label>
               </div>
@@ -480,11 +471,9 @@
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Air Max"
-                  id="checkDefault"
+                  id="col3"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Air Max
-                </label>
+                <label class="form-check-label" for="col3"> Air Max </label>
               </div>
 
               <div class="form-check">
@@ -492,9 +481,9 @@
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Nike Total 90"
-                  id="checkDefault"
+                  id="col4"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="col4">
                   Nike Total 90
                 </label>
               </div>
@@ -503,64 +492,54 @@
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Elite"
-                  id="checkDefault"
+                  id="col5"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Elite
-                </label>
+                <label class="form-check-label" for="col5"> Elite </label>
               </div>
               <div class="form-check">
                 <input
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Mercurial"
-                  id="checkDefault"
+                  id="col6"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Mercurial
-                </label>
+                <label class="form-check-label" for="col6"> Mercurial </label>
               </div>
               <div class="form-check">
                 <input
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Monarch"
-                  id="checkDefault"
+                  id="col7"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Monarch
-                </label>
+                <label class="form-check-label" for="col7"> Monarch </label>
               </div>
               <div class="form-check">
                 <input
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Nike Dunk"
-                  id="checkDefault"
+                  id="col8"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Nike Dunk
-                </label>
+                <label class="form-check-label" for="col8"> Nike Dunk </label>
               </div>
               <div class="form-check">
                 <input
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Tiempo"
-                  id="checkDefault"
+                  id="col9"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Tiempo
-                </label>
+                <label class="form-check-label" for="col9"> Tiempo </label>
               </div>
               <div class="form-check">
                 <input
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Nike Zoom Rival"
-                  id="checkDefault"
+                  id="col10"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="col10">
                   Nike Zoom Rival
                 </label>
               </div>
@@ -569,20 +548,18 @@
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Phantom"
-                  id="checkDefault"
+                  id="col11"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Phantom
-                </label>
+                <label class="form-check-label" for="col11"> Phantom </label>
               </div>
               <div class="form-check">
                 <input
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Nike Rejuven8"
-                  id="checkDefault"
+                  id="col12"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="col12">
                   Nike Rejuven8
                 </label>
               </div>
@@ -591,9 +568,9 @@
                   class="form-check-input filter-collection"
                   type="checkbox"
                   value="Nike Court Vision"
-                  id="checkDefault"
+                  id="col13"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="col13">
                   Nike Court Vision
                 </label>
               </div>
@@ -615,11 +592,9 @@
                   class="form-check-input filter-sports"
                   type="checkbox"
                   value="Lifestyle"
-                  id="checkDefault"
+                  id="sport1"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Lifestyle
-                </label>
+                <label class="form-check-label" for="sport1"> Lifestyle </label>
               </div>
 
               <div class="form-check">
@@ -627,9 +602,9 @@
                   class="form-check-input filter-sports"
                   type="checkbox"
                   value="Performance"
-                  id="checkDefault"
+                  id="sport2"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="sport2">
                   Performance
                 </label>
               </div>
@@ -639,11 +614,9 @@
                   class="form-check-input filter-sports"
                   type="checkbox"
                   value="Running"
-                  id="checkDefault"
+                  id="sport3"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Running
-                </label>
+                <label class="form-check-label" for="sport3"> Running </label>
               </div>
 
               <div class="form-check">
@@ -651,9 +624,9 @@
                   class="form-check-input filter-sports"
                   type="checkbox"
                   value="Training & Gym"
-                  id="checkDefault"
+                  id="sport4"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="sport4">
                   Training & Gym
                 </label>
               </div>
@@ -662,9 +635,9 @@
                   class="form-check-input filter-sports"
                   type="checkbox"
                   value="Basketball"
-                  id="checkDefault"
+                  id="sport5"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="sport5">
                   Basketball
                 </label>
               </div>
@@ -673,31 +646,27 @@
                   class="form-check-input filter-sports"
                   type="checkbox"
                   value="Football"
-                  id="checkDefault"
+                  id="sport6"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Football
-                </label>
+                <label class="form-check-label" for="sport6"> Football </label>
               </div>
               <div class="form-check">
                 <input
                   class="form-check-input filter-sports"
                   type="checkbox"
                   value="Golf"
-                  id="checkDefault"
+                  id="sport7"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Golf
-                </label>
+                <label class="form-check-label" for="sport7"> Golf </label>
               </div>
               <div class="form-check">
                 <input
                   class="form-check-input filter-sports"
                   type="checkbox"
                   value="Skateboarding"
-                  id="checkDefault"
+                  id="sport8"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="sport8">
                   Skateboarding
                 </label>
               </div>
@@ -706,20 +675,18 @@
                   class="form-check-input filter-sports"
                   type="checkbox"
                   value="Tennis"
-                  id="checkDefault"
+                  id="sport9"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Tennis
-                </label>
+                <label class="form-check-label" for="sport9"> Tennis </label>
               </div>
               <div class="form-check">
                 <input
                   class="form-check-input filter-sports"
                   type="checkbox"
                   value="Athletics"
-                  id="checkDefault"
+                  id="sport10"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="sport10">
                   Athletics
                 </label>
               </div>
@@ -728,22 +695,18 @@
                   class="form-check-input filter-sports"
                   type="checkbox"
                   value="Walking"
-                  id="checkDefault"
+                  id="sport11"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Walking
-                </label>
+                <label class="form-check-label" for="sport11"> Walking </label>
               </div>
               <div class="form-check">
                 <input
                   class="form-check-input filter-sports"
                   type="checkbox"
                   value="Outdoor"
-                  id="checkDefault"
+                  id="sport12"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Outdoor
-                </label>
+                <label class="form-check-label" for="sport12"> Outdoor </label>
               </div>
             </ul>
           </div>
@@ -763,9 +726,9 @@
                   class="form-check-input filter-brand"
                   type="checkbox"
                   value="Nike Sportswear"
-                  id="checkDefault"
+                  id="brand1"
                 />
-                <label class="form-check-label" for="checkDefault">
+                <label class="form-check-label" for="brand1">
                   Nike Sportswear
                 </label>
               </div>
@@ -775,11 +738,9 @@
                   class="form-check-input filter-brand"
                   type="checkbox"
                   value="Jordan"
-                  id="checkDefault"
+                  id="brand2"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  Jordan
-                </label>
+                <label class="form-check-label" for="brand2"> Jordan </label>
               </div>
 
               <div class="form-check">
@@ -787,11 +748,9 @@
                   class="form-check-input filter-brand"
                   type="checkbox"
                   value="NikeLab"
-                  id="checkDefault"
+                  id="brand3"
                 />
-                <label class="form-check-label" for="checkDefault">
-                  NikeLab
-                </label>
+                <label class="form-check-label" for="brand3"> NikeLab </label>
               </div>
 
               <div class="form-check">
@@ -799,9 +758,9 @@
                   class="form-check-input filter-brand"
                   type="checkbox"
                   value="ACG"
-                  id="checkDefault"
+                  id="brand4"
                 />
-                <label class="form-check-label" for="checkDefault"> ACG </label>
+                <label class="form-check-label" for="brand4"> ACG </label>
               </div>
             </ul>
           </div>

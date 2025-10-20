@@ -85,6 +85,28 @@ p.sale {
   width: 100%;
   padding: 0.5rem;
 }
+.shoe-item {
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+.colour.active {
+  outline: 2px solid black;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #fff;
+}
+.colour:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.size-btn.active {
+  background: black;
+  color: white;
+  border-color: black;
+}
+.shoe-item:hover {
+  transform: scale(1.02);
+}
 .btns {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
