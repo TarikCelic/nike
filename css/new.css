@@ -181,7 +181,7 @@ body {
   font-family: "BBH Sans Bogle", sans-serif;
   text-transform: uppercase;
   z-index: 1000;
-  animation: fadeOpacity 4s ease-in forwards;
+  animation: fadeOpacity 3s ease-in forwards;
 }
 .first-screen h1 {
   transform: translateY(300%);
