@@ -24,13 +24,13 @@
   <body>
     <div class="responsive-nav">
       <img src="imgs/icons/white-logo.png" width="50rem" />
-      <a href="index.html" class="leave-resp">
+      <a href="index.php" class="leave-resp">
         <img src="imgs/icons/home.svg" width="20rem" />
         Home
       </a>
     </div>
     <div class="observer">
-      <a href="index.html" class="leave-section">
+      <a href="index.php" class="leave-section">
         <img src="imgs/icons/home.svg" width="20rem" />
         Home
       </a>

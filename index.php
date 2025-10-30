@@ -70,13 +70,13 @@
       <div class="second-row-nav">
         <ul>
           <li>
-            <a href="new.html">
+            <a href="new.php">
               <img src="imgs/icons/top-left-arrow.svg" width="20px" alt="" />
               New</a
             >
           </li>
           <li>
-            <a href="article.html">
+            <a href="products.php?type=shoes">
               <img
                 src="imgs/icons/top-left-arrow.svg"
                 width="20rem"
@@ -85,7 +85,7 @@
             >
           </li>
           <li>
-            <a href="">
+            <a href="products.php?type=clothes">
               <img
                 src="imgs/icons/top-left-arrow.svg"
                 width="20rem"
@@ -140,9 +140,9 @@
       </a>
       <nav>
         <ul>
-          <li><a href="new.html">New</a></li>
-          <li><a href="article.html">Shoes</a></li>
-          <li><a href="">Clothes</a></li>
+          <li><a href="new.php">New</a></li>
+          <li><a href="products.php?type=shoes">Shoes</a></li>
+          <li><a href="products.php?type=clothes">Clothes</a></li>
           <li><a href="">Kids</a></li>
         </ul>
       </nav>

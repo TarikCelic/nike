@@ -30,13 +30,13 @@
       <div class="second-row-nav">
         <ul>
           <li>
-            <a href="new.html">
+            <a href="new.php">
               <img src="imgs/icons/top-left-arrow.svg" width="20px" alt="" />
               New</a
             >
           </li>
           <li>
-            <a href="article.html">
+            <a href="products.php?type=shoes">
               <img
                 src="imgs/icons/top-left-arrow.svg"
                 width="20rem"
@@ -45,7 +45,7 @@
             >
           </li>
           <li>
-            <a href="">
+            <a href="products.php?type=clothes">
               <img
                 src="imgs/icons/top-left-arrow.svg"
                 width="20rem"
@@ -91,14 +91,14 @@
       </div>
     </div>
     <header>
-      <a class="logo" href="index.html">
+      <a class="logo" href="index.php">
         <img src="imgs/icons/nike_black_logo.svg" alt="logo" id="logo-img" />
       </a>
       <nav>
         <ul>
-          <li><a href="new.html">New</a></li>
-          <li><a href="article.html">Shoes</a></li>
-          <li><a href="">Clothes</a></li>
+          <li><a href="new.php">New</a></li>
+          <li><a href="products.php?type=shoes">Shoes</a></li>
+          <li><a href="products.php?type=clothes">Clothes</a></li>
           <li><a href="">Kids</a></li>
         </ul>
       </nav>
@@ -766,9 +766,67 @@
           </div>
         </div>
       </aside>
-      <article></article>
+      <article>
+        <?php
+// products.php
+require_once 'config.php'; 
+
+// 1. DYNAMICNA TABELA
+// Postavlja defaultni tip, a zatim ga preuzima iz URL-a.
+$product_type = isset($_GET['type']) && in_array($_GET['type'], ['shoes', 'clothes']) 
+    ? $_GET['type'] 
+    : 'shoes'; // Default je 'shoes' ako nema parametra ili je pogrešan
+
+// Koristimo varijablu za SQL upit
+$table_name = $product_type;
+
+// 2. FILTRIRANJE
+// (Možete zadržati postojeću logiku za filtriranje, ali sada morate 
+// voditi računa da se upit koristi s dinamičkim nazivom tabele $table_name)
+// U ovom primjeru, izbacili smo filter logiku radi čitljivosti, ali je možete
+// vratiti ako vam je potrebna.
+
+// 3. DOHVATANJE PROIZVODA IZ DINAMIČKE TABELE
+try {
+    // Upit koristi dinamički naziv tabele: $table_name
+    $sql = "SELECT * FROM {$table_name} ORDER BY created_at DESC";
+    $products = $baza->query($sql)->fetchAll();
+    $page_title = ucfirst($product_type); // Npr. "Shoes" ili "Clothes"
+
+} catch (PDOException $e) {
+    // U slučaju da tabela ne postoji
+    $products = [];
+    $page_title = "Greška";
+    // Opcionalno, prikažite grešku samo za razvoj: echo "Greška: " . $e->getMessage();
+}
+
+?>
+          <?php if (empty($products)): ?>
+            <p>Trenutno nema proizvoda u kategoriji: <?= htmlspecialchars($page_title) ?>.</p>
+          <?php endif; ?>
+
+          <?php foreach($products as $p): ?>
+            <div class="shoe-item">
+              <img src="<?= htmlspecialchars($p['img']) ?>" alt="<?= htmlspecialchars($p['name']) ?>" />
+              <div class="shoe-info">
+                <h3 class="shoe-name"><?= htmlspecialchars($p['name']) ?></h3>
+                <p class="shoe-gender"><?= htmlspecialchars($p['gender']) ?>'s <?= htmlspecialchars($product_type) ?></p>
+                <div class="shoe-price">
+                  <p class="price-now"><?= $p['price'] ?> EUR</p>
+                  <p class="price-original">
+                    <?= ($p['sale'] && $p['originalPrice']) ? $p['originalPrice'] . " EUR" : "" ?>
+                  </p>
+                  <p class="sale">
+                    <?= ($p['sale'] && $p['originalPrice']) 
+                          ? round((($p['originalPrice'] - $p['price']) / $p['originalPrice']) * 100) . "% off" 
+                          : "" ?>
+                  </p>
+                </div>
+              </div>
+            </div>
+          <?php endforeach; ?>
+      </article>
     </main>
-    <script src="js/shoes.js"></script>
     <script src="js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
